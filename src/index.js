@@ -1,12 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Router, Route, Switch } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
+import { Home } from './pages/home/Home';
+import { Edit } from './pages/products/Edit';
+import { View } from './pages/products/View';
+import { Add } from './pages/products/Add';
+import { history } from "./history";
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Router history={history}>
+      <Switch>
+        <Route exact path={"/home"} component={Home} />
+        <Route exact path={"/add"} component={Add} />
+        <Route exact path={"/edit"} component={Edit} />
+        <Route exact path={"/view"} component={View} />
+      </Switch>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
