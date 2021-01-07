@@ -7,19 +7,17 @@ import { Edit } from './pages/products/Edit';
 import { View } from './pages/products/View';
 import { Add } from './pages/products/Add';
 import { history } from "./history";
-import './index.css';
+// import './index.css';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router history={history}>
-      <Switch>
-        <Route exact path={"/home"} component={Home} />
-        <Route exact path={"/add"} component={Add} />
-        <Route exact path={"/edit"} component={Edit} />
-        <Route exact path={"/view"} component={View} />
-      </Switch>
-    </Router>
-  </React.StrictMode>,
+  <Router history={history}>
+    <Switch>
+      <Route exact path={"/"} component={Home} />
+      <Route exact path={"/add"} component={Add} />
+      <Route exact path={"/edit"} component={Edit} />
+      <Route exact path={"/view"} component={View} />
+    </Switch>
+  </Router>,
   document.getElementById('root')
 );
 
